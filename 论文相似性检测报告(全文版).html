@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>相似性检测报告全文版</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<style>
+    body{line-height:150%;font-size:13px;padding:0 15px; margin:0;}
+    h2,p,div,h3{padding:0;margin:0;}
+    h2{padding:10px 0;padding:12px 0;font-size:23px;border-top:1px solid #0362A3;color:#444;}
+    .clear{clear:left;}
+    h2{text-align:center;}
+    .green{color:Green;}
+    .top_logo{width:100%;float:left;padding:10px 0;}
+    .top_logoSpan{float: right; padding:35px 20px 6px 0;color:Gray;}
+    .titlewidth{width:45%; text-align:center; display:inline-block;font-size:15px;color:#444;}
+    #description{padding-left:20px;bottom:10px;}
+    #description p{padding-top:10px;color:#666;line-height:100% !important;font-size:12px;}
+    #reportheader p{line-height:180%;}
+    .rightcopy {border:1px solid #ccc;background:#f5f5f5;border-right:none;padding:5px;}
+    .lefttext {padding:0 1% 0 0.5%;width:48%;}
+    .greenBorder { border-right: 15px solid green;}
+    .redBorder { border-right: 15px solid #9f0016;}
+    .titlebgst{padding:6px 20px 6px 22px;background:#eff5fd;margin-bottom:1px;border:1px solid #BCD6F4;border-bottom:none;}
+</style>
+    <div style="margin-bottom: 10px;">
+        <div class="top_logo">
+            <span class="top_logoSpan">论文相似性检测报告</span><img src='data:image/png;base64,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' /></div>
+        <div class="clear">
+        </div>
+        <div id="reportheader">
+            <h2>
+                论文相似性检测报告(全文版)</h2><p>论文标题：企业协同办公系统</p><p>论文作者：</p>
+            <p>
+                报告编号：b8132940-f845-4de7-8f6d-a8c500ffebd5</p>            
+            
+            <p>
+                原文字数：15,506</p>
+            <p>
+                检测日期：2018年04月17日</p>
+            <p>
+                检测范围：中国学术期刊数据库（CSPD）、中国学位论文全文数据库（CDDB）、中国学术会议论文数据库（CCPD）、中国学术网页数据库（CSWD）</p>
+          <p id="conclusion">
+            <p>
+                <b>总相似比：</b><span style="color:red">1.41%</span>（参考文献相似比：<span style="color:#008000">0.00%</span>，排除参考文献相似比：<span style="color:red">1.41%）</span></p>
+          </p>
+          </div>
+    </div> 
+    <h3 id="fullscreenSwitch" class="titlebgst">
+        <p class="titlewidth"><b>原文</b></p> <p class="titlewidth"><b>相似论文片段</b></p>
+    </h3>    
+    <table width="100%" style="border: 1px solid rgb(188, 214, 244); table-layout: fixed; overflow: hidden; word-break: keep-all; word-wrap: break-word;">
+        
+        <tr>
+            <td align="left" valign="top" class="lefttext" >
+            本科毕业设计（论文）
+
+                 
+论文题目：	企业协同办公系统
+系    别：	
+年级专业：	 
+学    号：	 
+姓　　名：	 
+指导教师：	 	成绩：	
+
+
+	2018	年		月		日	
+
+摘要
+在当今社会上，企业的迅速发展，企业资源的增多，导致企业协同办公工作越来越繁忙，传统的管理方式已经无法满足企业协同办公需求，因此建立一个企业协同办公系统已经变的非常重要。
+本文研究企业协同办公系统采用当前较为流行的B/S（浏览器/服务器）结构和JSP动态网页开发技术，基于Windows XP操作系统和MYSQL数据库，设计并实现了一个功能较为完善的企业协同办公系统。本系统经过测试，运行效果稳定，操作方便、快捷；实现了一个功能全面、实用性好、安全性高，并具有良好的可扩展性、可维护性的管理平台。
+通过本企业协同办公系统，用户可进行办公室相关信息的查询，管理员可对办公室相关信息进行全面管理，使企业协同办公工作高效化、科学化、规范化。
+关键词：企业协同办公；JSP；MYSQL数据库；B/S结构
+
+
+Abstract
+In today&#39;s society, the rapid development of enterprises and the increase of enterprise resources have led to an increasingly busy collaborative office work for companies. The traditional management methods can no longer meet the needs of corporate collaborative offices. Therefore, it has become very important to establish a corporate collaborative office OA system. .
+The collaborative office OA system studied in this paper adopts the currently popular B/S (browser/server) architecture and JSP dynamic web page development technology. Based on the Windows XP operating system and MYSQL database, a more functional Java-based system is designed and implemented. Web&#39;s corporate collaborative office OA system. The system has been tested and the operation effect is stable, and the operation is convenient and fast. A management platform with complete functions, good practicability, high security, and good scalability and maintainability is realized.
+Through this Java web-based enterprise collaborative office OA system, users can query office-related information, and administrators can comprehensively manage office-related information, so that corporate collaborative office work is highly efficient, scientific, and standardized.
+
+Keywords:	corporate collaborative office; JSP; MYSQL database; B/S structure
+目录
+摘要	ii
+Abstract	iii
+目录	iv
+1	概述	1
+1.1研究背景及目的	1
+1.2研究现状	1
+1.3主要工作	2
+2	相关技术简介	3
+2.1开发工具	3
+2.1.1MyEclipse	3
+2.1.2Tomcat	3
+2.2 JSP技术	3
+2.3 JAVA技术	4
+2.4 MYSQL数据库	5
+2.5 B/S结构	5
+3	系统分析	6
+3.1 系统设计目标	6
+3.2 系统可行性分析	6
+3.2.1操作可行性	7
+3.2.2发展可行性	7
+3.2.3技术可行性	7
+3.3 需求分析	7
+3.4 系统流程分析	8
+3.4.1用户登录	8
+3.4.3添加信息流程	8
+3.5 系统UML用例分析	9
+3.5.1管理员用例图	9
+3.5.2用户用例图	10
+3.6 界面需求分析	10
+4	系统设计	12
+4.1 系统结构图	12
+4.2 系统功能需求概述	12
+4.3 数据库设计	13
+4.3.1 数据库设计原则	13
+4.3.2 数据库实体	13
+4.3.3 数据库表	15
+5	系统实现	17
+5.1 登录模块	17
+5.2 管理员模块	17
+5.2.1 员工信息管理	17
+5.2.2 员工薪资管理	18
+5.2.3公告信息管理	18
+5.2.4员工考勤管理	19
+5.2.5 公司文档管理	19
+5.2.6公司信息管理	20
+5.2.7个人信息	20
+5.3用户模块	20
+5.3.1 薪资信息	20
+5.3.2 考勤打卡	21
+5.3.3考勤记录	21
+5.3.4文档下载	22
+5.3.5 公司公告	22
+6	系统测试	23
+6.1 测试定义	23
+6.2 测试方法	24
+6.3 测试策略	24
+6.4 测试安排	24
+6.5 测试分析	25
+结论	26
+参考文献	27
+致谢	28
+ 
+1	概述
+1.1研究背景及目的
+背景：随着时代的发展，信息化进程不断加快，人们的工作和生活已经逐步进入到了信息化时代。企业协同办公系统是以企业办公为实例而设计的一种实用型的管理系统。随着企业规模的不断扩大，办公室的相关管理变的越来越繁琐，为了方便用户查询办公室相关信息，提高管理效率，而开发出这套企业协同办公系统。
+近来年，我国经济的迅猛发展，企业投入和规模不断扩大，企业可调配资源也明显增加。我们经过对企业协同办公信息进行调查，发现了随着企业不断扩大，企业协同办公工作越来越频繁，工作量巨大，手工查询记录办公室相关信息已经不能满足当前管理需要，容易出错，数据繁多，因此特开发了本企业协同办公系统，来提高企业协同办公人员的管理效率，从而也可避免因系统的不完善而导致管理漏洞。
+目的：通过这次设计熟练的掌握HTML、JSP、JAVA等语言编程，对企业协同办公系统的开发有一个基本的了解，在员工信息、薪资、考勤、文档等内容的同时对系统的开发有一个基础的认识。通过这次的设计，熟练掌握数据库的编程方法。
+1.2研究现状
+根据最新调查得知，在此之前对办公室的管理通常是基于文本，表格等纸介的手工处理，物品借出、归还等情况的统计和核实等通常采用人工检查与核实，信息量大，在数据处理方面存在工作量大且易出错，其次还存在数据繁多与数据丢失等现象出现，而且还不方便查找，在总体上缺乏对办公室的规范管理，为了提高管理效率我们急需开发出这套企业协同办公系统。
+随着计算机技术的发展以及计算机网络的逐渐普及，互联网成为人们查找信息的重要场所，二十一世纪是信息的时代，所以信息的交换和信息流通显得特别重要。因此，使用计算机来管理办公室成为必然。开发合适企业协同办公系统，可以方便用户打卡、薪资查看、文档下载查看公告等，提高管理办事的效率，有利于更好的管理办公室相关事务。
+鉴于上述管理信息系统的日趋成熟和收集信息的情况，该企业协同办公系统充分运用MIS的总体思想，综合应用了MYSQL、JSP等技术，来实现完成企业协同办公系统的开发与设计。
+1.3主要工作
+本文首先对系统所涉及到的基础理论知识进行阐述，并在此基础上进行了系统分析。系统分析是平台开发的一个不可缺少的环节，为了能够使本系统更好、更完善的被设计出来，就必须先进行调查研究。在系统调查的基础上，对新系统的功能进行细致的分析，从而才能够开发出完整的系统设计。
+其次考虑到系统实施的可行性，在软件方面我选择了如今比较流行的JSP技术来进行开发管理平台的设计，使用 MYSQL数据库存储数据。由于JSP和MYSQL 都是非常成熟的开发工具，因此无论在安全性、可用性、可靠性方面都毋庸置疑。
+本论文一共分为六章，具体内容如下：
+第一章介绍了本文的研究背景、现状以及主要工作。
+第二章介绍了企业协同办公系统所采用的技术，开发环境。
+第三章主要描述企业协同办公系统的系统分析，包括可行性分析，系统功能需求分析，系统流程分析，构建系统用例图等。
+第四章为详细介绍了系统的设计，包括系统结构设计、系统总体设计以及数据库实体以及数据库表等。
+第五章介绍了企业协同办公系统的具体实现。
+第六章介绍了系统的测试。
+
+2	相关技术简介
+2.1开发工具
+本系统的设计主要运用了MyEclipse和Tomcat后台服务器技术，设计时中采用了JSP技术完成了页面设计过程，接下来我们主要对MyEclipse和Tomcat进行说明。
+2.1.1MyEclipse
+MyEclipse，通常用来设计Java， J2EE的Eclipse插件集合，利用它可以完成对数据库和J2EE的开发。通过对应用程序服务器进行整合，可以大大的增强运算速度。MyEclipse的功能十分强大，几乎涵盖了各种设计功能。
+2.1.2Tomcat
+Tomcat是一种是一个免费的开放源代码的Web 应用服务器。在访问客户比较少的情况下被经常采纳，在设计JSP 程序时成为最好的选择。换句话说，将Tomcat服务器安装到一台电脑上时，可通过它对HTML页面的访问请求进行配合。事实上，Tomcat可以看成Apache 服务器基础上的延伸，但它工作时相对比较独立，因此当tomcat工作时，事实上它是看成一个与Apache 服务器相对独立的进程运行的。
+2.2 JSP技术
+JSP程序使用了Java编程语言，JSP技术可以对动态网页进行封装。通过tags和scriptlets，网页还能访问存在于服务端的资源的应用逻辑。JSP可以分离网页逻辑与网页设计和显示，对可重用的基于组件的开发进行支撑，更容易的对基于Web的应用程序进行设计。
+当Web服务器接收到访问JSP网页的请求时，首先运行的程序段，接下来将JSP文件中的HTML代码和运行效果一并返还给用户。通过Java文件的插入能够对数据库、网页多重定向等运行，从而满足构建动态网页所需要的程序。JSP和Servle相同，都可以通过服务器端运行。由于能够将一个HTML文本返回给用户端，所以用户端具备浏览器就可以进行浏览。HTML程序和穿插在内部的Java程序可以构建JSP网页。在服务器被用户端访问时，能够处理相应的Java代码，然后将产生的HTML页面再返回给用户端的浏览器。JSP的设计关键是Servlet，通常大型的Web应用程序的设计成果也通过Java Servlet和JSP的协作。JSP既拥有了方便快捷的Java程序，又统统的面向用户，既实现了平台的无关性危险还比较小，可以具备互联网的全部优势。JSP技术的优点：
+（1）一次编写，到处运行。除了系统之外，代码无需做任何改动。 
+（2）系统的多平台支持。通常情况下，能够在任何情况下的全部平台上进行设计，能够安排在任何情况中，也能够在任何情况下进行发展。相比ASP/.net来说，优点是显而易见的。
+（3）强大的可塑性。通过一个不大的Jar程序能够对Servlet/JSP进行运行，也能够通过很多服务器进行集群和负载平衡，甚至能够通过多台Application解决问题。单台服务器到多台服务器，Java展现了一个强大的功能。 
+（4）具有强大和多样化的开发工具支持。Java已经有了很多的设计方法，何况大部分工具都是没有花费的，这中间有很多都在多种平台之下顺畅的进展。
+ (5)支持服务器端组件。只有很有力的服务器端组件才能支撑web运行，因此开发者可以在调用web页面时通过另外的开发工具来达成纷乱效用的组件，来加强系统的可操作性。JSP可以通过完善的JAVA BEANS 组件来达成纷乱的商务功能。
+内部对象表现出：request 用户端请求，此请求会涵盖来自GET/POST请求的参数； response网页传回用户端的反应；管理pageContext 网页的属性；session 与请求相关的会话；application servlet正在进行的内容；out 用来输送响应的输出流； config　代码片段配置对象；page　JSP网页本身。
+2.3 Java技术
+Java非常适合于企业网络和Internet环境，现在已成为Internet中最受欢迎、最有影响的编程语言之一。面向对象主要有四大特性：封装、抽象、继承和多态。 
+封装：在面向对象语言中，封装特性是由类来体现的，我们将现实生活中的一类实体定义成类，其中包括属性和行为（在Java中就是方法），就好像人类，可以具有name,sex,age等属性，同时也具有eat(),sleep()等行为，我们在行为中实现一定的功能，也可操作属性，这是面向对象的封装特性； 
+抽象：抽象就是将一类实体的共同特性抽象出来，封装在一个抽象类中，所以抽象在面向对象语言是由抽象类来体现的。比如鸟就是一个抽象实体，因为抽象实体并不是一个真正的对象，它的属性还不能完全描述一个对象，所以在语言中体现为抽象类不能实例化； 
+继承：继承就像是我们现实生活中的父子关系，儿子可以遗传父亲的一些特性，在面向对象语言中，就是一个类可以继承另一个类的一些特性，从而可以代码重用，其实继承体现的是is-a关系，父类同子类在本质上还是一类实体。
+多态：多态就是通过传递给父类对象引用不同的子类对象从而表现出不同的行为，多态可为程序提供更好的可扩展性，同样也可以代码重用。
+2.4 MYSQL数据库
+在软件项目中，通过使用数据库来操作数据，可以保证数据的独立性、一致性和安全性，为系统提供有效地访问数据的方式，同时为程序员减少了应用程序的开发时间。
+常见的数据库无非分为两类，一类是关系型数据库(Oracle，DB2，MySQL，SQL Server )和非关系型数据库(NoSql、MongeDB)。不同的数据库有各自的优缺点，此处不做具体介绍。
+MySQL支持多线程的特点，可以方便的利用系统资源，有效提高速度，而且提供了TCP/IP、ODBC和JDBC等多种方式途径来连接数据库；虽说其功能不够强大、规模也相对较小，但是对于本系统来说足够了，同时也可以进行二次开发的数据库表结构空间的扩展。
+使用MySQL建立系统数据库，不仅有利于前期对数据的整合处理操作，同时利于后期的二次开发的数据扩展操作，对于有限级的数据处理，MySQL可以很好的胜任。
+2.5 B/S结构
+在三层体系结构的B/S（Browser/Server，浏览器/服务器结构）系统中，用户可以通过浏览器向分布在网络上的众多服务器发出请求。B/S系统极大地简化了客户机的工作量，客户机上只需要安装、配置少量的客户端运行软件即可，服务器将担负大量的工作，对数据库的访问以及应用程序的执行都将由服务器来完成。
+B/S架构的不断成熟，主要使用WWW浏览器技术，结合多种浏览器脚本语言，用通用浏览器需要实现原本复杂的专有软件来实现的强大功能，并节约了开发成本，是一种新的软件架构。B/S系统包括：表示逻辑层，控制逻辑层，数据展现层，三层是相对独立又相互关联。
+3	系统分析
+系统分析可以使我们可以对设计的产品有一个深入的了解，通过系统分析可以使我们在不确定的情况下，确定研究的方法，明确目标，找出各种可行的方法，然后通过一定的标准确定选择方案，帮助我们做出更加合理和科学的抉择。所以在设计程序时我们考虑如何实现功能。
+3.1 系统设计目标
+需求分析的任务是通过详细调查现实企业协同办公所需的对象，充分了解系统的工作概况，明确功能实现的各种需求，然后在此基础上确定新系统的功能。新系统必须充分考虑今后可能的扩充和改变。
+当今社会的生活节奏越来越快，人们对互联网的要求也越来越高，不仅要求使用方便，而且对于功能及扩展性也有了更高的要求，最能达到要求莫过于利用计算机网络，将所需功能要求和计算机网络结合起来，就形成了企业协同办公系统。
+在设计本企业协同办公系统时遵循以下设计目标进行开发：
+（1）安全性。在信息化的时代，信息就是宝贵的财富，保证信息的安全，特别是个人信息更要求可靠的安全性。
+（2）先进性。结合当前流行的技术，开发出符合用户的需求，适合企业协同办公的系统。
+（3）可扩展性。企业协同办公是企业管理工作中的一部分，因此在软件设计过程中，我们要考虑到软件应用的可扩展性，便于将来软件的升级、更新。
+（4）有效性。有效性主要包括功能有效性，设计的软件一定要最大限度地满足用户的需求，包括用户显式的需求和隐式的需求。
+3.2 系统可行性分析
+对所有系统完成设计，都可能受到时间以及空间上的制衡。因此，在开始设计每一个项目的时候，我们必须对系统进行可行性需求分析，只有这样才能够降低项目所带来的危害，减少人力、物力以及财力方面的损耗。以下简要介绍一下对操作、发展和技术方面的可行性分析。
+3.2.1操作可行性
+企业协同办公系统操作比较容易，大部分输入信息页面选择的形式都是下拉框。在有些页面，信息可以自动生成，不需要输入。输入时间也采用了日历控件，操作比较容易，对操作人员的要求不高，只需要熟练操作WINDOWS即可。
+3.2.2发展可行性
+随着企业规模的不管扩大，可调配资源越来越多，企业协同办公的相关数据繁多，管理工作量巨大，需要有一个完善企业协同办公系统，来完整准确的记录办公室相关信息，以便于更好的管理办公室，同时也方便用户对办公室相关信息的查询。最重要的是要确保科学的管理方法，来提高办公室的管理效率。因此，对于企业的发展创新来说，开发一个企业协同办公系统是可行的。
+3.2.3技术可行性
+（1）硬件可行性分析
+系统的硬件要求方面不存在特殊的要求，只需要在普通的硬件配置就能够轻松的实现，只是需要确保系统的正常工作即可，以及拥有较高的效率。如果有特别低的硬件，它可以导致系统的低性能以及效率低，从而导致整个网站的运行不顺畅。以目前普遍的个人计算机的配置而言，这是十分容易实现的 。因此，本系统的开发在硬件方面是可行的。
+（2）软件可行性分析
+JSP技术提供了一个共同的机制类似的借口动态模型，设计更集中。此外，代码复用，也可以很好的体现。因此，考虑到系统的实际情况，选择JSP作为本系统开发技术。通过上述分析，该系统的设计实现在软件方面是可行的。
+因此，我们进行了三个方面的可行性研究，可以看出，本企业协同办公系统的开发是没有问题的。
+3.3 需求分析
+随着社会经济的迅速发展，办公室相关管理工作越来越多，为满足企业协同办公需求，结合互联网的发展，开发了这个企业协同办公系统，方便管理员进行企业协同办公工作，提高办公室的管理效率。
+企业协同办公系统与传统的管理方式相比，有着无法比拟的有点，其具有效率高的特点，同时使得需要查询办公室相关信息的用户方便的进行查询，受到了企业的广泛使用；同时企业协同办公系统利用计算机平台对办公室相关信息进行管理，具有储存空间大，成本低，查找方便等优点。在这一情况下，开发设计了企业协同办公系统，本系统采用MYSQL数据库，充分保证数据的安全性、稳定性，管理员可以快捷准确的管理信息。
+3.4 系统流程分析
+3.4.1用户登录
+为了保证系统的安全性，要使用本系统必须先登陆到系统中，管理员和用户通过不同的账号和密码进行登录到不同的管理界面。其登录流程图如图3-1所示。
+ 
+图3-1 登录界面流程图
+3.4.3添加信息流程
+管理员可进行信息添加操作，系统在添加信息的时候，首先输入信息，看信息是否正确，正确的话，添加成功，否则返回输入信息，添加信息流程图如图3-2所示
+ 
+图3-2 添加信息流程图
+3.5 系统UML用例分析
+UML的缩写是 Unified Modeling Language,又称统一建模语言。是用来对软件密集系统进行可视化建模的一种语言。它是开发者对客观事物进行建模的标记，同时它也是为开发者了解系统需要什么样的功能和整个流程是什么样的做的前期工作。现在我们就对本企业协同办公系统进行UML建模分析。
+3.5.1管理员用例图
+系统中的核心用户是系统管理员，管理员用户的用例如图3-3所示。
+ 
+图3-3 管理员用例图
+3.5.2用户用例图
+用户的用例如图3-4所示。
+ 
+图3-4用户用例图
+3.6 界面需求分析
+目前，界面设计已经成为对软件质量进行评价的一条关键指标，一个好的用户界面可以使用户使用系统的信心和兴趣增加，从而使工作效率提高，JSP技术是将JAVA语言作为脚本语言的，JSP网页给整个服务器端的JAVA库单元提供了一个接口用来服务HTTP的应用程序。创建动态页面比较方便。客户界面是指软件系统与用户交互的接口，往往涵盖输出、输入、人机对话的界面格式等。
+1.输出设计
+输出是由电脑对输入的基本信息进行解决，生成高质量的有效信息，并使之具有一定的格式，提供给管理者使用，这是输出设计的主要责任和目标。
+系统开发的过程与实施过程相反，并不是从输入设计到输出设计，而是从输出设计到输入设计。这是由于输出表格与使用者直接相联系，设计的目的应当是确保使用者可以很方便的使用输出表格，并且可以将各部门的有用信息及时的反映出来。输出设计的准绳是既要整体琢磨不同管理层的所有需要，又要简洁，不要提供给用户不需要的信息。
+2.输入设计
+输入数据的收集和录入是比较麻烦的，需要非常多的人力和一定设备，而且经常出错。一旦输入系统的数据不正确，那么处理后的输出就会扩大这些错误，因此输入的数据的准确性对整个系统的性能起着决定性意义。
+输入设计有以下几点原则：
+1）输入量应尽量保持在能够满足处理要求的最低限度。输入量越少，错误率就会越少，数据的准备时间也越少。
+2）应尽可能的使输入的准备以及输入的过程进行时比较方便，这样使错误的发生率降低。
+3）应尽量早检查输入数据（尽量接近原数据发生点）,以便使错误更正比较及时。
+4）输入数据尽早地记录成其处理所需的形式，以防止数据由一种介质转移到另一种介质时需要转录而可能发生的错误。
+
+4	系统设计
+4.1 系统结构图
+本企业协同办公系统主要分为管理员和普通用户两个用户角色，其系统结构图4-1所示：
+ 
+图4-1 系统结构图
+4.2 系统功能需求概述
+企业协同办公系统分为用户功能模块和管理员的功能模块，其功能模块图，如图4-2所示
+ 
+图4-2功能模块图
+4.3 数据库设计
+数据库是计算机信息系统的基础。信息的收集、整理、存储、检索、更新、加工、统计和传播等操作必须在数据库管理系统的的支持下才能进行。目前，电脑系统的关键与核心部分就是数据库。数据库开发的优劣对整个系统的质量和速度有着直接影响。
+数据库的设计一般要可以分为以下几个步骤：分别是分析需求、设计概念、设计逻辑、设计物理。
+4.3.1 数据库设计原则
+在概念设计中，通常用四种方法：
+自顶向下、自底向上、逐步扩张、混合策略，以它为骨架集成由自底向上策略中设计的各局部概念结构
+在物理结构设计阶段首先分两步走：
+确定数据库的物理结构，在关系数据库中主要是指存取方法和存储结构。 对物理结构的评价是时间和空间效率。
+选取正确的关系模式存取方法，常用的有：存取索引方法、聚簇存取、HASH存取方法等。
+4.3.2 数据库实体
+在此阶段，用户可以参与和评价数据库系统的设计，从而有利于保证数据库系统的设计与用户的需求相吻合。在概念模式的设计中，E-R模型法是最常见的设计方法。
+通过上述分析对数据库的需求，与系统概念模型的特点及开发方法相结合，我们可以建立E-R模型图，本系统的E-R图如下图所示：
+ 
+1、考勤实体属性图如图4-3所示：
+ 
+图4-3考勤实体属性图
+2、公司实体属性图如图4-4所示
+ 
+图4-4 公司实体属性图
+3、文件实体属性图如图4-5所示
+ 
+图4-5 文件实体属性图
+4、公告实体属性图如图4-6所示
+ 
+图4-6 公告实体属性图
+4.3.3 数据库表
+企业协同办公系统需要后台数据库，下面介绍数据库中的各个表的详细信息。各个表的设计结果如下：
+表 4-1 tb_check考勤信息表
+列名	数据类型	长度	允许空	说明
+id	int	11	否	编号
+check_item	varchar	255	是	考勤
+create_time	datetime		是	时间
+remark	varchar	255	是	备注
+user_id	int	11	是	用户编号
+
+表 4-2  tb_companyinfo公司信息表
+列名	数据类型	长度	允许空	说明
+id	int	11	否	编号
+address	varchar	255	是	地址
+company_name	varchar	255	是	企业名称
+phone	varchar	255	是	手机
+introduce	varchar	255	是	介绍
+postcode	varchar	255	是	邮编
+
+表 4-3 tb_document文件信息表
+列名	数据类型	长度	允许空	说明
+id	int	1，1	否	编号
+avatar	varchar	255	是	头像
+doc_item	varchar	255	是	文件
+introduce	varchar	255	是	介绍
+time	varchar	255	是	时间
+
+表 4-4 tb_notice公告信息表
+列名	数据类型	长度	允许空	说明
+id	int	11	否	编号
+create_time	varchar	255	是	创建时间
+content	varchar	255	是	内容
+notice_item	varchar	255	是	标题
+
+
+5	系统实现
+5.1 登录模块
+管理员和用户都可以进行登录，输入账号、密码和验证码，选择用户角色类型，点击登录按钮进行登录，系统会对用户输入的登录信息进行验证，信息正确则登录成功，反之登录失败，登陆界面如图5-1所示。
+ 
+图5-1 登录界面
+5.2 管理员模块
+5.2.1 员工信息管理
+管理员通过员工信息管理可以进行新增、编辑和删除员工信息，其界面如图5-2所示。
+ 
+图5-2员工信息管理界面
+5.2.2 员工薪资管理
+通过员工薪资管理可以进行员工薪资信息的新增、编辑和删除，其界面如图5-3所示。
+ 
+图5-3员工薪资管理界面
+5.2.3公告信息管理
+管理员通过公告信息管理可以进行公告信息的新增、编辑和删除，其界面展示如图5-4所示。
+ 
+图5-4公告信息管理界面
+5.2.4员工考勤管理
+管理员通过员工考勤管理可以进行考勤信息的编辑和删除，其界面如图5-5所示。
+ 
+图5-5员工考勤管理界面
+5.2.5 公司文档管理
+管理员通过公司文档管理可以进行公司文档信息的上传、编辑删除和下载，其界面如图5-6所示。
+ 
+图5-6公司文档管理界面
+5.2.6公司信息管理
+管理员可对用户信息进行修改操作，用户查询界面展示如图5-7所示。
+ 
+图5-7 公司信息管理界面
+5.2.7个人信息
+通过个人信息可以进行个人信息的修改，其界面如图5-8所示。
+ 
+图5-8 个人信息界面
+5.3用户模块
+5.3.1 薪资信息
+用户可以进行查看新增信息，其界面如图5-9所示。
+ 
+图5-9 薪资信息界面
+5.3.2 考勤打卡
+用户通过考勤打卡可以进行打卡，其界面如图5-10所示。
+ 
+图5-10 考勤打卡界面
+5.3.3考勤记录
+用户可以进行考勤的查看，其界面展示如图5-11所示。
+ 
+图5-11考勤记录界面
+5.3.4文档下载
+通过文档下载可以进行下载，其界面如图5-12所示。
+ 
+图5-12文档下载界面
+5.3.5 公司公告
+用户通过公告可以进行查看公告信息，其界面如图5-13所示。
+ 
+图5-13 公司公告界面
+6	系统测试
+系统测试是软件设计的最后一道工序，也是非常重要的一步。用于检查软件的质量、性能、
+            </td>
+            <td align="left" valign="top" >
+                            
+            </td>
+        </tr>
+        
+        <tr>
+            <td align="left" valign="top" class="lefttext" >
+            <font color=#9F0016>可靠性等是否符合用户需求</font>。<font color=#9F0016>一套严谨的、规范的、完善的测试</font>过程<font color=#9F0016>将大大提高软件的质量、可信度、可靠性，降低软件的出错率，降低用户风险系数</font>。<font color=#9F0016>通常系统测试包括：功能测试</font>，安全测试，可用性测试，性能测试、兼容性测试等方面。
+6.1 测试定义
+测试的定义：程序测试的目的是为了找到错误而实行程序的一个过程。测试
+            </td>
+            <td align="left" valign="top" class='rightcopy redBorder'>
+                
+                <span>[<font color="red">1.41%</font>]
+                    <a href="http://d.old.wanfangdata.com.cn/Periodical_lnszxb201603008.aspx"
+                        target="_blank">基于C/S模式的学籍学历管理系统测试与维护策略</a>
+                    [期刊论文]《辽宁师专学报（自然科学版）》，2016年  梁健</span><br/>                 
+                 <span>规范管理工作和操作流程，大大避免了人为操作的错误和管理不规范行为．系统测试是系统开发的最后一道工序，也是非常重要的一步．主要用于检查<font color=#9F0016>软件的质量、</font>性能、<font color=#9F0016>可靠性等是否符合用户需求</font>．<font color=#9F0016>一套严谨的、规范的、完善的测试</font>程序<font color=#9F0016>将大大提高软件的质量、可信度、可靠性，降低软件的出错率，降低用户风险系数</font>．<font color=#9F0016>通常系统测试包括：功能测试</font></span>
+                            
+            </td>
+        </tr>
+        
+        <tr>
+            <td align="left" valign="top" class="lefttext" >
+            (Testing)的任务与目的可以表现为：
+目的：发现程序的错误；
+任务：通过运行计算机上的程序，找到程序中隐藏的错误。
+另一个预测的相关术语叫纠错(Debugging)。其目的以及任务可以规定为：
+目的：找到并且纠正错误；
+任务：解除软件的故障，从而保证程序的可靠运行。测试与纠错的关系，可以用图6-1的数据流图来说明。从图中可以看出，每一次系统的测试是要准备好若干个测试数据，从而与被测试的程序一起送入计算机进行命令执行。一般我们把程序执行一次所需要的测试数据，叫做一个“测试用例(Test Case)。其中每一个测试用所例产生相应的“测试结果”。但是如果它的测试结果与“期望结果”不一致的话，那就是说明程序中的错误是存在的，需要我们来找到并改正。
+                                                                                              
+                                                                                         
+                                                                                                 
+                                                                                            
+                                                                                            
+                                                                                                      
+图6-1 测试与纠错信息流程
+6.2 测试方法
+在我们设计软件的过程中，测试系统常用的测试方法主要有两种：功能测试和结构测试。
+功能测试也被叫做黑盒测试和数据驱动测试，是在已经知道系统应该具有的具体功能的情况下，通过黑盒测试来测试系统功能是不是能够正常运行。在测试时，将系统当做不能打开的盒子，在不管系统内部结构与特性的状况下进行测试，它只检查系统功能是不是根据系统说明书的规定正常运行的，同时检测系统是否能正确接收的输入信息和输出信息的正确对应，并保持系统的完整性的外部信息需求。
+白盒测试与黑盒测试相反，它了解系统内部工作的各项具体程序，能够通过测试来检查系统内部的运行是不是按照系统说明书的规定进行正常运作的，因此，白盒测试又被叫做结构测试和逻辑驱动测试。根据测试程序的结构在每个道路试验，当系统运行时不是能按预定要求正确运行，无论其功能如，白盒测试试验，道路试验是一个逻辑驱动器，这种测试主要用来软件测验。
+6.3 测试策略
+为了方便用户使用本企业协同办公系统，以及尽可能减少企业协同办公系统的设计与实现的测试错误的发生。
+该测试系统的主要范围，以测试在以下三个方面：
+1、于企业协同办公系统的代码，分别进行单元测试，集成测试，系统测试，验收测试的结果；
+2、列在测试对象可以被测试或不可接受的测试的特性和功能;
+3、用于分析和文档的测试需求，该日期的书面文件不必影响的设计，开发和执行的测试。
+6.4 测试安排
+该系统的总体质量进行了测试，该系统的功能和性能完全可以实现，那么必须做到以下几点：
+1、为每个系统的功能测试，单元测试，集成测试
+2、系统测试，集成测试，系统测试的各个模块的整合
+3、所有测试用例已经实现
+4、通过执行所有的自动化测试脚本
+5、所有重要的等级问题是与测试和验证完成
+6、测试的每个部分是验证完成的水平
+7、重要特点不是问题
+8、回归测试
+6.5 测试分析
+经过对上述的测试结果分析，本系统满足用户的要求和需求。所有基本功能齐全，操作简单，系统运行性能良好，是一个值得推广企业协同办公系统。
+结论
+毕业设计是最能体现出我们所学知识的应用情况，是对我们大学期间所学知识的应用巩固和提高的时刻。设计企业协同办公系统的过程不仅仅是对我学计算机知识的一次考验，更是对我运用所学知识解决处理现实问题能力的培养和锻炼。通过这次的毕业设计让我对软件的开发有了很深的认识了解，我的编程能力也得到了很大的提升。虽然在系统开发过程中也遇到了很多的困难，但是在老师和同学们的帮助下，以及经过自己的不懈努力，最终圆满的完成了毕业设计。
+通过这套企业协同办公系统的开发，我不但巩固了之前学过的知识，还获得了许多JSP知识，我深入体会到学科之间的关联效应。在整个设计过程中明白了许多东西，也培养独立工作能力，树立信心，提高了自己的工作能力，我相信在以后的学习和工作生活中有至关重要的作用。这次设计也大大提高了我的动手的能力，让我在学习中充分体会到了探索的乐趣，享受成功的创作过程，在本次设计过程中汲取的东西，是一笔宝贵的财富，让我受益匪浅。
+回顾过去做毕业设计的整个过程，充满了付出和收获，虽然经历了种种困难，不断修改，不断探索，但是当你看到成果时候的感觉，是一种难以用言语表达的喜悦之感，这些在毕业设计过程中学习到的东西将会使我终身受益！
+
+
+
+参考文献
+[1] 黄艳峰. 在Java语言中实施“案例教学”的研究与探索[J]. 电脑知识与技术, 2010, 6(5):1148-1149 
+[2] 王玉英. 的SQL数据库访问技术[J]. 现代计算机：专业版, 2010, 19(14):63-66
+[3] 赵钢. JSP Servlet+EJB的Web模式应用研究[J]. 电子设计工程, 2013, 21(13):47-49
+[4] 王家华．软件工程[M]，沈阳：东北大学出版社，2011：46
+[5] 张孝祥,徐明华.软件开发课堂.清华大学出版社，2009：55
+[6] 崔洋.SQL数据库应用从入门到精通.中国铁道出版社，2013：27
+[7] 王珊,萨师煊.数据库系统概论.高等教育出版社, 2006：16
+[8] 黄艳峰. 在Java语言中实施“案例教学”的研究与探索[J]. 电脑知识与技术, 2010, 6(5):1148-1149 
+[9] 王玉英. 的SQL数据库访问技术[J]. 现代计算机：专业版, 2010, 19(14):63-66
+[10] Hsiao I H, Sosnovsky S, Brusilovsky P. Guiding students to the right questions: adaptive navigation support in an e-learning system for Java programming[J]. Journal of Computer Assisted Learning, 2010, 26(4):270-283.
+
+致谢
+为期一个学期的毕业论文（设计）已接近尾声了，我的大用户活也即将要画上一个圆满的句号。此刻我的心感到无比惆怅失落，对于熟悉我的老师和所有可爱的同学们，我们很快就会挥手告别。在即将毕业之际，我的心情实在难以平静，从最开始的学习专业知识到刚开始参加毕业课题讨论到最后论文的顺利完成，我身边的亲朋好友给了我极其多的帮助，这些帮助大多是雪中送炭，帮助我渡过了很多难关。因此，我要想对我伸出过援助之手的可爱的朋友、老师、家人们表示衷心的感谢。
+首先要对我本次论文的指导老师表示深深的敬意，她对于我的学习和生活给予了最多的关怀和最悉心的指导。同时，我还要感谢大学期间我所有的带课老师，他们对我的生活、学习等各方面都付出了许多关怀，没有他们的带领，我不会成为一名合格的毕业生没有他们在课堂上认真详细教课、辅导，我无法顺利完成毕业设计，我想向他们表达最真诚的感谢！感谢我们学院的所有领导，为我提供所需要的设备和资料！还要感谢我身边的同学和朋友们，感谢他们对我的关心和帮助！ 
+我还要感谢我最亲近的家人，是因为有了他们在学业上对我的全力支持以及在生活上的关怀才能支撑着我走到现在！
+祝愿学校的领导教师以及和我一起奋斗的同学们工作顺利，事业有成，也要祝愿学校的前景更加辉煌。
+最后，我要向牺牲了休息时间来对本文进行审阅，评议和参与论文答辩的各位老师表示深深的感谢。在此，衷心的谢谢您们！
+            </td>
+            <td align="left" valign="top" >
+                            
+            </td>
+        </tr>
+        
+    </table>
+    <div id="description">
+        <p class="smtit">
+            说明：</p>
+        <p>
+            1.总相似比≈送检论文与检测范围全部数据相似部分的字数/送检论文总字数</p>
+        <p>
+            2.参考文献相似比≈送检论文与其参考文献相似部分的字数/送检论文总字数</p>
+        <p>
+            3.排除参考文献相似比=总相似比 - 参考文献相似比</p>
+        <p>
+            4.剩余相似比≈总相似比-典型片段总相似比
+        </p>
+        <p>
+            5.本报告为检测系统算法自动生成，仅供参考
+        </p>
+    </div>
+    
+</body>
+</html>
